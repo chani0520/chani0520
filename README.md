@@ -1,4 +1,6 @@
-## 🐶 Hello!
+## 🐵
+
+#### want to be...
 
 <div>
   <a href="https://github.com/chani0520">
@@ -23,13 +25,16 @@
   <a href="https://instagram.com/bori_160610" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
   <a href = "mailto:kimchan0765@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
 <!--   ![Snake animation](https://github.com/chani0520/chani0520/blob/output/github-contribution-grid-snake.svg) -->
-
 </div>
-
 <!-- ref : https://www.youtube.com/watch?v=TsaLQAetPLU&list=WL&index=20&t=1093s -->
 
+<hr />
+  
 <details>
     <summary> <strong> [work experience] </strong> </summary>
-> - 2019.08.01 ~ 2021.09.30 shinhan card billing system SM (subcontractor)
-> - 2021.12.01 ~            make app with my colleague
+  
+  - 2019.08.01 ~ 2021.09.30 shinhan card billing system SM (subcontractor)
+  
+  - 2021.12.01 ~            make app with my colleague
+  
 </details>
