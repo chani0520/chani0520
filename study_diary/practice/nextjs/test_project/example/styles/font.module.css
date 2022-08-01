@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'human';
+  font-display: fallback;
+  src: url('../public/fonts/humanMyungzo.ttf') format('truetype'),
+    url('/public/fonts/human-myungzo.woff') format('woff'),
+    url('/public/fonts/humanMyungzo.eot?iefix') format('embedded-opentype');
+}
+
+.docu {
+  font-family: human;
+}
