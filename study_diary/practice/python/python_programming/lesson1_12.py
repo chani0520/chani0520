@@ -1,4 +1,4 @@
-# 👉 8
+# 👉 8 변수 선언
 # num = 1
 # name = '1'
 #
@@ -9,10 +9,10 @@
 # num = name
 # print(num, type(num))
 
-# 👉 9
+# 👉 9 print로 출력하기
 # print('Hi', 'Mike', sep=',', end='.\n')
 
-# 👉 10
+# 👉 10 수치
 # import math
 #
 # result = math.sqrt(25)
@@ -23,7 +23,7 @@
 #
 # print(help(math))
 
-# 👉 11
+# 👉 11 문자열
 # print('hello')
 # print("hello")
 # print("I don't know")
@@ -58,7 +58,7 @@
 # prefix = 'Py'
 # print(prefix + 'thon')
 
-# 👉 12
+# 👉 12 문자열의 인덱스와 슬라이스
 word = 'python'
 print(word[0])
 print(word[1])
