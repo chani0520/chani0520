@@ -9,7 +9,12 @@ export class CatsService {
     this.cats.push(cat);
   }
 
-  findAll(): Cat[] {
+  findAll({ activeOnly, page }): Cat[] {
     return this.cats;
+  }
+
+  findOne(id: number) {
+    console.log(`success find #${id} cats!`);
+    return id;
   }
 }
