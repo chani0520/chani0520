@@ -10,20 +10,31 @@ import {
   Query,
   DefaultValuePipe,
   ParseBoolPipe,
+  UseGuards,
+  SetMetadata,
+  UseInterceptors,
 } from '@nestjs/common';
 import { CreateCatDto } from './dto/create-cat.dto';
 import { CatsService } from './cats.service';
 import { Cat } from './interfaces/cat.interface';
-import { ForbiddenException } from 'src/forbidden.exception';
-import { HttpExceptionFilter } from 'src/http-exception.filter';
-import { ValidationPipe } from 'src/validation.pipe';
+import { ForbiddenException } from 'src/exception/forbidden.exception';
+import { HttpExceptionFilter } from 'src/exception/http-exception.filter';
+import { ValidationPipe } from 'src/pipe/validation.pipe';
+import { RolesGuard } from 'src/guard/roles.guard';
+import { Roles } from 'src/decorator/roles.decorator';
+import { LoggingInterceptor } from 'src/interceptor/logging.interceptor';
+import { TransformInterceptor } from 'src/interceptor/transform.interceptor';
+import { User, UserEntity } from 'src/decorator/user.decorator';
 
 @Controller('cats')
+// @UseGuards(new RolesGuard('admin'))
+@UseInterceptors(TransformInterceptor)
 export class CatsController {
   constructor(private catsService: CatsService) {}
 
   @Post()
   // @UseFilters(HttpExceptionFilter)
+  @Roles('admin')
   async create(@Body(new ValidationPipe()) createCatDto: CreateCatDto) {
     this.catsService.create(createCatDto);
 
@@ -62,5 +73,10 @@ export class CatsController {
     id: number,
   ) {
     return this.catsService.findOne(id);
+  }
+
+  @Get('user')
+  async findUser(@User('firstName') firstName: string) {
+    console.log(`Hello ${firstName}`);
   }
 }

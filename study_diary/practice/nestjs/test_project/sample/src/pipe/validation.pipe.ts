@@ -49,7 +49,7 @@ export class ValidationPipe implements PipeTransform<any> {
     }
 
     // { name: 'chan', age: 31, breed: 'chan breed' }
-    console.log(value);
+    // console.log(value);
     return value;
   }
 

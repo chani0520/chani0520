@@ -14,7 +14,7 @@ export class CatsService {
   }
 
   findOne(id: number) {
-    console.log(`success find #${id} cats!`);
+    // console.log(`success find #${id} cats!`);
     return id;
   }
 }

@@ -4,11 +4,13 @@ import {
   NestModule,
   RequestMethod,
 } from '@nestjs/common';
-import { APP_FILTER, APP_PIPE } from '@nestjs/core';
+import { APP_FILTER, APP_GUARD, APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
 import { CatsModule } from './cats/cats.module';
-import { HttpExceptionFilter } from './http-exception.filter';
+import { HttpExceptionFilter } from './exception/http-exception.filter';
+import { LoggingInterceptor } from './interceptor/logging.interceptor';
 import { logger } from './middleware/logger.middleware';
-import { ValidationPipe } from './validation.pipe';
+import { RolesGuard } from './guard/roles.guard';
+import { ValidationPipe } from './pipe/validation.pipe';
 
 /**
  * The root module of the application ( 애플리케이션의 루트 모듈 )
@@ -24,6 +26,14 @@ import { ValidationPipe } from './validation.pipe';
     {
       provide: APP_PIPE,
       useClass: ValidationPipe,
+    },
+    {
+      provide: APP_GUARD,
+      useClass: RolesGuard,
+    },
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: LoggingInterceptor,
     },
   ],
   imports: [CatsModule],

@@ -1,7 +1,9 @@
 import { HttpAdapterHost, NestFactory } from '@nestjs/core';
-import { AllExceptionsFilter } from './all-exception.filter';
+import { AllExceptionsFilter } from './exception/all-exception.filter';
 import { AppModule } from './app.module';
-import { ValidationPipe } from './validation.pipe';
+import { LoggingInterceptor } from './interceptor/logging.interceptor';
+import { RolesGuard } from './guard/roles.guard';
+import { ValidationPipe } from './pipe/validation.pipe';
 
 /**
  * The entry file of the application which uses the core function `NestFactory` to create a Nest application instance.
@@ -32,6 +34,10 @@ async function bootstrap() {
    * - 아래와 같이 말고, app.module.ts에서 import해서 사용해도 전역으로 작동한다.
    */
   // app.useGlobalPipes(new ValidationPipe());
+
+  // app.useGlobalGuards(new RolesGuard());
+
+  // app.useGlobalInterceptors(new LoggingInterceptor());
 
   // HTTP listener start up
   await app.listen(3000);
