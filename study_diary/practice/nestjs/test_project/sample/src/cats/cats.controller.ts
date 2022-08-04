@@ -30,6 +30,10 @@ import { User, UserEntity } from 'src/decorator/user.decorator';
 // @UseGuards(new RolesGuard('admin'))
 @UseInterceptors(TransformInterceptor)
 export class CatsController {
+  /**
+   * 생성자 기반(constructor based) DI
+   * @param catsService
+   */
   constructor(private catsService: CatsService) {}
 
   @Post()
