@@ -80,4 +80,14 @@ export class UsersController {
   findOneWithHeader(@Param('id') id: string) {
     return this.usersService.findOne(+id);
   }
+
+  // curl -X DELETE http://localhost:3000/users/1/memo/5
+  // route parameter
+  @Delete(':userId/memo/:memoId')
+  deleteUserMemo(
+    @Param('userId') userId: string,
+    @Param('memoId') memoId: string,
+  ) {
+    return `userId: ${userId}, memoId: ${memoId} is deleted!`;
+  }
 }
