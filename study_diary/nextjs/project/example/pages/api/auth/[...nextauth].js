@@ -1,8 +1,10 @@
 import NextAuth from 'next-auth';
 import NaverProvider from 'next-auth/providers/naver';
 import KakaoProvider from 'next-auth/providers/kakao';
+import axios from 'axios';
 
 export default NextAuth({
+  //** Provider */
   providers: [
     NaverProvider({
       clientId: process.env.NEXT_PUBLIC_NAVER_CLIENT_ID,
@@ -13,9 +15,19 @@ export default NextAuth({
       clientSecret: process.env.NEXT_PUBLIC_KAKAO_CLIENT_SECRET,
     }),
   ],
+
+  //** Pages */
   pages: {
     signIn: '/login',
   },
+
+  //** Session */
+  session: {
+    jwt: true,
+    maxAge: 1000 * 60 * 60 * 24,
+  },
+
+  //** Callback */
   callbacks: {
     async jwt({ token, user, account, profile, isNewUser }) {
       if (account) {
@@ -27,7 +39,7 @@ export default NextAuth({
       return token;
     },
 
-    async session({ session, token, user }) {
+    async session({ session, token }) {
       if (token) {
         session.accessToken = token.accessToken;
         session.provider = token.provider;
@@ -37,6 +49,7 @@ export default NextAuth({
       return session;
     },
 
+    //** Redirect */
     async redirect({ url, baseUrl }) {
       // Allows relative callback URLs
       if (url.startsWith('/')) {

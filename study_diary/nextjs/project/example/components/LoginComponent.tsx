@@ -15,13 +15,17 @@ const LoginComponent = () => {
           이메일 : <b>{data?.user?.email}</b>
         </div>
         <div>
-          Provider : <b>{data?.provider}</b>
+          Provider : <b>{data && data.provider ? data.provider : ''}</b>
         </div>
         <div>
-          ProviderAccId : <b>{data?.providerAccountId}</b>
+          ProviderAccId :{' '}
+          <b>{data && data.providerAccountId ? data.providerAccountId : ''}</b>
         </div>
         <div>
           인증상태 : <b>{status}</b>
+        </div>
+        <div>
+          access_token : <b>{data ? data.accessToken : ''}</b>
         </div>
       </div>
       <hr className='my-5' />

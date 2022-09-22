@@ -127,6 +127,16 @@ const Home: NextPage = () => {
             </Link>
           </li>
           <div className='py-2' />
+
+          <li>
+            🎃 React DND {'=> '}
+            <Link href='/dnd'>
+              <a>
+                <code className={styles.code}>/dnd</code>
+              </a>
+            </Link>
+          </li>
+          <div className='py-2' />
         </ul>
       </main>
     </div>
