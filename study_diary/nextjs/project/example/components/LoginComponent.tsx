@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSession, signIn, signOut } from 'next-auth/react';
+import Router from 'next/router';
 
 const LoginComponent = () => {
   const { data, status } = useSession();
+
+  useEffect(() => {
+    if (status === 'authenticated') {
+      console.log('✅ data =>', data);
+    }
+  }, [status]);
 
   return (
     <div className='container w-2/3 text-center'>
@@ -53,7 +60,7 @@ const LoginComponent = () => {
           <div>
             <button
               className='m-2 border-2 border-emerald-500 rounded-xl p-5'
-              onClick={() => signIn('naver')}
+              onClick={() => signIn('naver', { callbackUrl: '/signup' })}
             >
               네이버 로그인
             </button>
@@ -61,7 +68,7 @@ const LoginComponent = () => {
           <div>
             <button
               className='m-2 border-2 border-yellow-300 rounded-xl p-5'
-              onClick={() => signIn('kakao')}
+              onClick={() => signIn('kakao', { callbackUrl: '/signup' })}
             >
               카카오 로그인
             </button>

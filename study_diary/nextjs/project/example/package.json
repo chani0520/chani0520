@@ -19,9 +19,10 @@
     "@uiw/react-markdown-preview": "^4.0.9",
     "aos": "^2.3.4",
     "axios": "^0.26.1",
+    "jsonwebtoken": "^8.5.1",
     "markdown-to-jsx": "^7.1.7",
     "next": "12.1.0",
-    "next-auth": "^4.3.4",
+    "next-auth": "^4.10.3",
     "react": "17.0.2",
     "react-calendar": "^3.7.0",
     "react-dnd": "^16.0.1",
@@ -31,6 +32,7 @@
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
+    "@types/jsonwebtoken": "^8.5.9",
     "@types/node": "17.0.22",
     "@types/react": "17.0.41",
     "@types/react-calendar": "^3.5.0",
@@ -45,5 +47,6 @@
   },
   "resolutions": {
     "@types/react": "17.0.40"
-  }
+  },
+  "proxy": "http://localhost:4000"
 }

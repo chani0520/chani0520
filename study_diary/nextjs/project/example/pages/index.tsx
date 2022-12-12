@@ -137,6 +137,16 @@ const Home: NextPage = () => {
             </Link>
           </li>
           <div className='py-2' />
+
+          <li>
+            🎃 S3 Download {'=> '}
+            <Link href='/s3download'>
+              <a>
+                <code className={styles.code}>/s3download</code>
+              </a>
+            </Link>
+          </li>
+          <div className='py-2' />
         </ul>
       </main>
     </div>
