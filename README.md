@@ -27,6 +27,6 @@
   
   - 2021.12.01 ~ 2021.09.31 make app with my colleague
 
-  - 2022.10.01 ~            co-founder at Plead Co., Ltd.
+  - 2022.10.01 ~ 2023.06.23 co-founder at Plead Co., Ltd.
 
 </details>
